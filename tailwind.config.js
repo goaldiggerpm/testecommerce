@@ -6,7 +6,7 @@ module.exports = {
     './components/**/*.{js,jsx}',
     './app/**/*.{js,jsx}',
     './src/**/*.{js,jsx}',
-	],
+  ],
   theme: {
     container: {
       center: true,
@@ -17,6 +17,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        green: 'var(--green)',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

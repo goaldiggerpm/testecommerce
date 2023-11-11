@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getData } from '../actions/getData';
 // import { cloneDeep } from 'lodash';
-
+//:IMP Refer this later https://jasonwatmore.com/redux-toolkit-fix-the-object-notation-for-createslice-extrareducers-is-deprecated-in-react 
 
 export const stockSlice = createSlice({
     name: 'stock',

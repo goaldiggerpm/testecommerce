@@ -6,8 +6,8 @@ import ReduxProvider from '@/redux/reduxProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Fresh Karro!',
-  description: 'fresh buying made easy',
+  title: 'My E-Commerce!',
+  description: 'My E-Commerce',
 }
 
 export default function RootLayout({ children }) {
