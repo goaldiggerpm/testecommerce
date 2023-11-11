@@ -15,6 +15,7 @@ import {
 } from "../../../components/ui/card"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
+import { Plus, Minus } from "lucide-react"
 
 const ProductCard = () => {
 
@@ -38,7 +39,7 @@ const ProductCard = () => {
                 <CardTitle>Cabbage</CardTitle>
             </CardHeader>
             <CardContent className="pl-6 pr-6 pt-0 pb-0">
-                <div className="relative shrink-0" >
+                <article className="relative shrink-0" >
                     <div class="overflow-hidden mx-auto w-full sm:w-[120px] h-[120px] md:w-[160px] md:h-[160px] transition duration-200 ease-in-out transform group-hover:scale-105 relative">
                         <Image alt="Organic Spring Mix" fetchpriority="high" decoding="async" data-nimg="fill" class="object-cover bg-fill-thumbnail" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src={cababge} style={{ position: "absolute", height: "100%", width: "100%", inset: "0px", color: "transparent" }} />
                     </div>
@@ -47,8 +48,8 @@ const ProductCard = () => {
                         <h2 class="text-brand-dark text-13px sm:text-sm lg:text-15px leading-5 sm:leading-6 mb-1.5">Organic Spring Mix</h2>
                         <div class="mt-auto text-13px sm:text-sm">1 each</div>
                     </div>
-                    <div className="absolute top-28 right-0" >
-                        <div className={cn("rounded-full w-[28px]  p-[4px] bg-lime-400 ml-auto mr-0 hover:bg-lime-300", `${!show ? `block` : `hidden`}`)} onClick={() => { setshow(!show) }} >
+                    <div className="absolute top-28 right-4" >
+                        <div className={cn("rounded-full w-[28px]  p-[4px] bg-lime-400 ml-auto mr-0 cursor-pointer hover:bg-lime-300", `${!show ? `block` : `hidden`}`)} onClick={() => { setshow(!show) }} >
                             <span class="sr-only">button-plus</span>
                             <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g opacity="1">
@@ -56,15 +57,19 @@ const ProductCard = () => {
                                 </g>
                             </svg>
                         </div>
-                        <div className={cn("justify-between rounded-full shadow-sm bg-gray-50 w-[220px] md:w-[250px]", `${!show ? `hidden` : `flex`}`)} >
-                            <Button onClick={() => { setvalue(value - 1) }} variant="outline" >Remove</Button>
+                        <div className={cn("justify-between rounded-full shadow-sm bg-gray-50 w-[220px] md:w-[220px]", `${!show ? `hidden` : `flex`}`)} >
+                            <Button onClick={() => { setvalue(value - 1) }} variant="outline" >
+                                <Minus />
+                            </Button>
                             <div className="flex items-center" >
                                 <p className="text-lg font-semibold h-auto" >{value}</p>
                             </div>
-                            <Button onClick={() => { setvalue(value + 1) }}  >Add</Button>
+                            <Button onClick={() => { setvalue(value + 1) }}  >
+                                <Plus />
+                            </Button>
                         </div>
                     </div>
-                </div>
+                </article>
             </CardContent>
             {/* <CardFooter className="flex justify-between h-[10vh] w-full  transition-colors duration-250 ease-in-out">
             </CardFooter> */}
